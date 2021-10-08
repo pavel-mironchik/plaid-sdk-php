@@ -23,6 +23,7 @@ class Tokens extends AbstractResource
 	 * @param string|null $redirect_uri
 	 * @param string|null $android_package_name
 	 * @param string|null $payment_id
+	 * @param string|null $institution_id
 	 * @throws PlaidRequestException
 	 * @return object
 	 */
