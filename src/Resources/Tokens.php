@@ -38,7 +38,8 @@ class Tokens extends AbstractResource
 		?string $access_token = null,
 		?string $redirect_uri = null,
 		?string $android_package_name = null,
-		?string $payment_id = null): object {
+		?string $payment_id = null,
+		?string $institution_id = null): object {
 
 		$params = [
 			"client_name" => $client_name,
@@ -76,6 +77,10 @@ class Tokens extends AbstractResource
 			$params["payment_initiation"] = [
 				"payment_id" => $payment_id
 			];
+		}
+
+		if( $institution_id ){
+			$params["institution_id"] = $institution_id;
 		}
 
 		return $this->sendRequest(
